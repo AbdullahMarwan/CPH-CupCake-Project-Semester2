@@ -2,12 +2,12 @@ package dat.backend.model.entities;
 
 public class Top {
     private int id;
-    private String type;
+    private String name;
     private double price;
 
-    public Top(int id, String type, double price) {
+    public Top(int id, String name, double price) {
         this.id = id;
-        this.type = type;
+        this.name = name;
         this.price = price;
     }
 
@@ -15,8 +15,8 @@ public class Top {
         return id;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
     public double getPrice() {

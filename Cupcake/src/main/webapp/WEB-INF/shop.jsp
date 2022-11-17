@@ -35,9 +35,8 @@
         <h2> Amount of Cupcakes in Cart: ${requestScope.sCartSize}</h2>
 
         <h2> Contents of Shopping Cart: </h2>
-        <c:forEach var="item" items="${sessionScope.sCart.cupcakeList}">
-            TopId: ${item.topId} BottomId: ${item.bottomId} Quantity: ${item.quantity}<br/>
-            <%-- After adding the objects, use:    TopId: ${item.top.name}<br/>--%>
+        <c:forEach var="item" items="${sessionScope.cart.cupcakeList}">
+            TopId: ${item.top.id} name: ${item.top.name} BottomId: ${item.bottom.id} Name: ${item.bottom.name} Amount: ${item.quantity}<br/>
         </c:forEach>
 
         <p class="mt-4"><a class="btn btn-primary" href="order">Complete Order</a></p>
