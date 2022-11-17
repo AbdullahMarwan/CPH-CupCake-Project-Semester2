@@ -35,7 +35,7 @@
         <h2> Amount of Cupcakes in Cart: ${requestScope.sCartSize}</h2>
 
         <h2> Contents of Shopping Cart: </h2>
-        <c:forEach var="item" items="${sessionScope.cart.cupcakeList}">
+        <c:forEach var="item" items="${sessionScope.sCart.cupcakeList}">
             TopId: ${item.top.id} name: ${item.top.name} BottomId: ${item.bottom.id} Name: ${item.bottom.name} Amount: ${item.quantity}<br/>
         </c:forEach>
 
