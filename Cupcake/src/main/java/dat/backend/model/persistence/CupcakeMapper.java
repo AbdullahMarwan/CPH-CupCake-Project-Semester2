@@ -115,7 +115,7 @@ public class CupcakeMapper {
     public static void insertOrderLines(int orderId, ShoppingCart cart, ConnectionPool connectionPool) {
         String sql = "insert into order_lines (" +
                 "order_id, top_id, bottom_id, " +
-                "top_price, bottom_price, amount ) values (?,?,?,?,?,?)";
+                "top_price, bottom_price, quantity) values (?,?,?,?,?,?)";
 
         try (Connection connection = connectionPool.getConnection()) {
             for (Cupcake cupcake : cart.getCupcakeList()) {
@@ -123,9 +123,9 @@ public class CupcakeMapper {
                     ps.setInt(1, orderId);
                     ps.setInt(2, cupcake.getTop().getId());
                     ps.setInt(3, cupcake.getBottom().getId());
-                    ps.setDouble(4, cupcake.getTop().getPrice());
-                    ps.setDouble(5, cupcake.getBottom().getPrice());
-                    ps.setInt(6, cupcake.getQuantity());
+                    ps.setInt(4, cupcake.getQuantity());
+                    ps.setDouble(5, cupcake.getTop().getPrice());
+                    ps.setDouble(6, cupcake.getBottom().getPrice());
                     ps.executeUpdate();
                 }
             }
