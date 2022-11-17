@@ -3,9 +3,9 @@ package dat.backend.model.entities;
 public class Bottom {
     private int id;
     private String type;
-    private int price;
+    private double price;
 
-    public Bottom(int id, String type, int price) {
+    public Bottom(int id, String type, double price) {
         this.id = id;
         this.type = type;
         this.price = price;
@@ -19,7 +19,7 @@ public class Bottom {
         return type;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 }

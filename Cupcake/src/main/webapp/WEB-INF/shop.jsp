@@ -13,24 +13,23 @@
         <p>Create your own cupcake from a selection of Cupcake Tops and Bottoms:</p>
 
         <form action="addtocart" method="post">
-            <select name="bottom">
-                <option value="1">Chocolate (5 kr)</option>
-                <option value="2">Vanilla (6 kr)</option>
-            </select>
-
             <select name="top">
-                <option value="1">Chocolate (5 kr)</option>
-                <option value="2">Vanilla (6 kr)</option>
+                <c:forEach var="topItem" items="${sessionScope.topList}">
+                    <option value="${topItem.id}">${topItem.name} (${topItem.price} kr)</option>
+                </c:forEach>
             </select>
-
+            <select name="bottom">
+                <c:forEach var="bottomItem" items="${sessionScope.bottomList}">
+                    <option value="${bottomItem.id}">${bottomItem.name} (${bottomItem.price} kr)</option>
+                </c:forEach>
+            </select>
             <select name="quantity">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
             </select>
-
-            <button name="addtocart">Add to Cart</button>
+            <button class="btn btn-primary" name="addToCart">Add to cart</button>
         </form>
 
         <h2> Amount of Cupcakes in Cart: ${requestScope.sCartSize}</h2>
@@ -40,6 +39,8 @@
             TopId: ${item.topId} BottomId: ${item.bottomId} Quantity: ${item.quantity}<br/>
             <%-- After adding the objects, use:    TopId: ${item.top.name}<br/>--%>
         </c:forEach>
+
+        <p class="mt-4"><a class="btn btn-primary" href="order">Complete Order</a></p>
 
     </jsp:body>
 

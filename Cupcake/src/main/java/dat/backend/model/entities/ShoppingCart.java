@@ -21,4 +21,8 @@ public class ShoppingCart {
     public List<Cupcake> getCupcakeList() {
         return cupcakeList;
     }
+
+    public void resetCart() {
+        cupcakeList.clear();
+    }
 }

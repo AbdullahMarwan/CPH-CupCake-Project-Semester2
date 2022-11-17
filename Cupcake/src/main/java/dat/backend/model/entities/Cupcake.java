@@ -1,6 +1,7 @@
 package dat.backend.model.entities;
 
 public class Cupcake {
+
     private Top top;
     private Bottom bottom;
     private int quantity;
@@ -12,24 +13,15 @@ public class Cupcake {
         this.quantity = quantity;
     }
 
-    public Top getCupcakeTop() {
+    public Top getTop() {
         return top;
     }
 
-    public Bottom getCupCakeBottom() {
+    public Bottom getBottom() {
         return bottom;
     }
 
     public int getQuantity() {
         return quantity;
-    }
-
-    @Override
-    public String toString() {
-        return "Cupcake{" +
-                "cupcakeTop=" + top +
-                ", cupCakeBottom=" + bottom +
-                ", quantity=" + quantity +
-                '}';
     }
 }
