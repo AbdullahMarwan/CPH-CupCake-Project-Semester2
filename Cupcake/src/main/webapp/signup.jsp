@@ -13,7 +13,7 @@
 
         <h3>You can Sign Up here</h3>
 
-        <form action="login" method="post">
+        <form action="signup" method="post">
             <label for="username">Username: </label>
             <input type="text" id="username" name="username"/>
             <label for="password">Password: </label>
